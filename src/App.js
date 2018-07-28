@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './img/early-times.png';
+import TopShowroom from "./img/showroom1.jpg";
 import './App.css';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -58,6 +59,15 @@ class App extends Component {
               </ul>
             </nav>
           </header>
+          <div>
+            <img src={TopShowroom} className="Top-showroom" alt="logo" />
+          </div>
+          <div classname="TopContents">
+            <li><a className="ContentsText">News</a></li>
+            <li><a className="SubContentsText">Nanika1</a></li>
+            <li><a className="SubContentsText">Nanika2</a></li>
+
+          </div>
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>

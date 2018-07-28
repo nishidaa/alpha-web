@@ -7,10 +7,29 @@
   margin-top: 10px;
 }
 
+.Top-showroom {
+  height: 800px;
+  margin-top: 120px;
+}
+
+.TopContents{
+  font-size: 20em;
+}
+
+.ContentsText{
+  font-size: 4em;
+}
+
+.SubContentsText{
+  font-size: 2em;
+}
+
 .App-header {
   background-color: #e6e6e6;
   height: 90px;
   color: white;
+  position: fixed;
+  width: 100%
 }
 
 ul {
