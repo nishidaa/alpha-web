@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import logo from '../images/early-times.png';
-import TopShowroom from "../images/showroom1.jpg";
-import '../styles/Top.css';
+import logo from '../../images/early-times.png';
+import ProductsImage from "../../images/showroom2.jpg";
+import '../../styles/Top.css';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton'
 
 const styles = {
   textbox: {
@@ -37,6 +38,11 @@ class Top extends Component {
     return this.state.count % 3 == 0 && this.state.count != 0? styles.largeText :styles.normal;
   }
 
+  handleToTopPage = () => {
+    this.props.history.push('/')
+  }
+
+
   render() {
     return (
       <MuiThemeProvider>
@@ -44,9 +50,9 @@ class Top extends Component {
           <header className="App-header">
             <nav>
               <ul>
-                <li><img src={logo} className="App-logo" alt="logo" /></li>
+                <li><img src={logo} className="App-logo" alt="logo" onClick={this.handleToTopPage} /></li>
                 <li><a href="#" className="Header-Menu">メニューA</a></li>
-                <li><a href="#" className="Header-Menu">メニューB</a></li>
+                <li><a href="#" className="Header-Menu">商品一覧</a></li>
                 <li><a href="#" className="Header-Menu">メニューC</a></li>
                 <li><a href="#" className="Header-Menu">メニューD</a></li>
                 <li>
@@ -60,7 +66,7 @@ class Top extends Component {
             </nav>
           </header>
           <div>
-            <img src={TopShowroom} className="Top-showroom" alt="logo" />
+            <img src={ProductsImage} className="Top-showroom" alt="logo" />
           </div>
           <div classname="TopContents">
             <li><a className="ContentsText">News</a></li>
