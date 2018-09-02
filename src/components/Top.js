@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './img/early-times.png';
-import TopShowroom from "./img/showroom1.jpg";
-import './App.css';
+import logo from '../images/early-times.png';
+import TopShowroom from "../images/showroom1.jpg";
+import '../styles/Top.css';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
@@ -21,7 +21,7 @@ const styles = {
   }
 };
 
-class App extends Component {
+class Top extends Component {
 
   constructor(props) {
     super(props);
@@ -89,4 +89,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Top;
