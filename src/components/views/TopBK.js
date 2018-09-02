@@ -3,29 +3,14 @@ import logo from '../../images/early-times.png';
 import TopShowroom from "../../images/showroom1.jpg";
 import '../../styles/Top.css';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import blue from '@material-ui/core/colors/blue';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton'
 
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main:"#e6e6e6"
-       }
-  },
-});
-
-const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  input: {
-    display: 'none',
-  },
+const styles = {
   textbox: {
     backgroundColor: '#ECECEC',
     margin: 10,
@@ -35,10 +20,9 @@ const styles = theme => ({
   largeText: {
     fontSize: '40px'
   }
-});
+};
 
-
-class App extends Component {
+class Top extends Component {
 
   constructor(props) {
     super(props);
@@ -58,25 +42,21 @@ class App extends Component {
     this.props.history.push('/products')
   }
 
-
   render() {
     return (
-      <MuiThemeProvider theme = {theme}>
+      <MuiThemeProvider>
         <div className="App">
           <header className="App-header">
             <nav>
               <ul>
                 <li><img src={logo} className="App-logo" alt="logo" /></li>
-                <li>
-                <Button color="primary" href = "#">MENU A</Button>
-                <Button color="primary" onClick={this.handleToProductsPage}>Products</Button>
-                <Button color="primary">MENU C</Button>
-                <Button color="primary">MENU D</Button>
-
-                </li>
+                <li><a href="#" className="Header-Menu">メニューA</a></li>
+                <li><a href="#" className="Header-Menu" onClick={this.handleToProductsPage}>商品一覧</a></li>
+                <li><a href="#" className="Header-Menu">メニューC</a></li>
+                <li><a href="#" className="Header-Menu">メニューD</a></li>
                 <li>
                   <div className="Header-Search">
-                    <div><font color="white">SEARCH</font></div>
+                    <div><font color="black">サイト内検索</font></div>
                     <input type="text" ></input>
                     <input type="button" value="検索"></input>
                   </div>
@@ -106,6 +86,7 @@ class App extends Component {
            multiLine={true}
            rows={2}
          /><br />
+         <RaisedButton primary={true} label="送信" onClick={this.tick} />
          <p style={this.getThreeTimesStyle()}>{this.state.count}回送信しました</p>
         </div>
       </MuiThemeProvider>
@@ -113,4 +94,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Top;
