@@ -5,10 +5,6 @@ import '../../styles/Top.css';
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import blue from '@material-ui/core/colors/blue';
 
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
@@ -24,6 +20,10 @@ const theme = createMuiTheme({
 });
 
 const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  
   button: {
     margin: theme.spacing.unit,
   },
@@ -39,6 +39,7 @@ const styles = theme => ({
   largeText: {
     fontSize: '40px'
   }
+  
 });
 
 
@@ -61,7 +62,11 @@ class App extends Component {
   handleToProductsPage = () => {
     this.props.history.push('/products')
   }
-
+  
+  handleChange = (value) => {
+    this.setState({ value });
+  };
+  
 
   render() {
     return (
@@ -72,10 +77,18 @@ class App extends Component {
               <ul>
                 <li><img src={logo} className="App-logo" alt="logo" /></li>
                 <li>
-                <Button size="large" color="primary" href = "#">トップ</Button>
-                <Button size = "small" color="primary">シリーズ一覧</Button>
-                <Button color="primary" onClick={this.handleToProductsPage}>商品検索</Button>
-                <Button color="primary">ショールーム</Button>
+                <Paper >
+                  <Tabs
+                    indicatorColor="primary"
+                    textColor="primary"
+                    
+                  >
+                    <Tab label="トップ" />
+                    <Tab label="シリーズ" />
+                    <Tab label="商品検索" />
+                    <Tab label="ショールーム" />
+                  </Tabs>
+                </Paper>
 
                 </li>
                 <li>
