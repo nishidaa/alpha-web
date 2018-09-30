@@ -17,6 +17,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -105,7 +106,7 @@ class App extends Component {
                     >
                       <Tab label="トップ" />
                       <Tab label="シリーズ" />
-                      <Tab label="商品検索" />
+                      <Tab label="商品検索" href="products" />
                       <Tab label="ショールーム" />
                     </Tabs>
                   </Paper>
@@ -125,7 +126,7 @@ class App extends Component {
             <img src={TopShowroom} className="Top-showroom" alt="logo" />
           </div>
           <div classname="TopContents">
-            <li>
+            <a>
               <CardContent>
                 <Typography color="textSecondary">
                   最新情報（更新日）
@@ -134,11 +135,20 @@ class App extends Component {
                   10月〇日　TOCとくのいち
                   </Typography>
                 <Typography component="p">
-                  詳細は<button>こちら</button>
+                  詳細は<Button color="secondary">こちら</Button>
                 </Typography>
               </CardContent>
 
-            </li>
+              <CardContent>
+                <Typography color="textSecondary">
+                  9月30日
+                  </Typography>
+                <Typography variant="headline" component="h2">
+                  サイト更新
+                  </Typography>
+
+              </CardContent>
+            </a>
 
 
           </div>
