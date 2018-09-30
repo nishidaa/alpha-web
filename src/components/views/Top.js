@@ -10,6 +10,10 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import blue from '@material-ui/core/colors/blue';
 
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -68,10 +72,10 @@ class App extends Component {
               <ul>
                 <li><img src={logo} className="App-logo" alt="logo" /></li>
                 <li>
-                <Button color="primary" href = "#">MENU A</Button>
-                <Button color="primary" onClick={this.handleToProductsPage}>Products</Button>
-                <Button color="primary">MENU C</Button>
-                <Button color="primary">MENU D</Button>
+                <Button size="large" color="primary" href = "#">トップ</Button>
+                <Button size = "small" color="primary">シリーズ一覧</Button>
+                <Button color="primary" onClick={this.handleToProductsPage}>商品検索</Button>
+                <Button color="primary">ショールーム</Button>
 
                 </li>
                 <li>
